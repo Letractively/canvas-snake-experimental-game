@@ -20,7 +20,7 @@ var initSnakeHeadPositionY=Math.floor(maxcols/2);
 
 
 //snake speed, 5 is default it will gain more meaning later in game tests 
-var snakeSpeed=8;
+var snakeSpeed=5;
 var snakeSpeedI=10-snakeSpeed;
 //game properties
 var intervalArray=new Array(55,66,77,90,100,110,140,160,200,250)
