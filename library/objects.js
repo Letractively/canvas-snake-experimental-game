@@ -194,6 +194,48 @@ if(nextLocation == 0)
 	map.base[deleted.x][deleted.y]=0;
 	
 	
+}
+else if(nextLocation == -1) //yummy food!!
+{
+	this.snakeCells.unshift(head);
+	var tmp=new Object();
+	tmp.x=nextX;
+	tmp.y=nextY;
+	this.snakeCells.unshift(tmp);
+	//this case we do not delete last part of snake to make it bigger
+	game.randomFood(); //draw an other food
+	var tm=(game.counter-game.lastEaten);
+	var smp=1;
+	if(tm <= 6)
+	smp=100;
+	else if(tm <=9)
+	smp=50;
+	else if(tm <= 13)
+	smp=25;
+	else if(tm <= 18)
+	smp=10;
+	else if(tm <= 23)
+	smp=5;
+	else if(tm <= 27)
+	smp=3;
+	else if(tm <= 30)
+	smp=2;
+	
+	
+	game.score = game.score+snakeSpeed*smp;
+	
+	document.getElementById("score").innerHTML="score : "+game.score;
+	document.getElementById("smp").innerHTML=smp+"X";
+
+	//update last eaten time
+	game.lastEaten=game.counter;
+} 
+else if(nextLocation == 2 || nextLocation ==1) //there is a wall or part of snake game over
+{
+this.snakeCells.unshift(head);
+game.over();
+}
+
 	//now update snake cells to correct cell types
 	//first update new head type
 	var newHead=this.snakeCells.shift();
@@ -238,48 +280,8 @@ if(nextLocation == 0)
 	
 	this.snakeCells.push(beforeNewTail);
 	this.snakeCells.push(newTail);
-	
-}
-else if(nextLocation == -1) //yummy food!!
-{
-	this.snakeCells.unshift(head);
-	var tmp=new Object();
-	tmp.x=nextX;
-	tmp.y=nextY;
-	this.snakeCells.unshift(tmp);
-	//this case we do not delete last part of snake to make it bigger
-	game.randomFood(); //draw an other food
-	var tm=(game.counter-game.lastEaten);
-	var smp=1;
-	if(tm <= 6)
-	smp=100;
-	else if(tm <=9)
-	smp=50;
-	else if(tm <= 13)
-	smp=25;
-	else if(tm <= 18)
-	smp=10;
-	else if(tm <= 23)
-	smp=5;
-	else if(tm <= 27)
-	smp=3;
-	else if(tm <= 30)
-	smp=2;
-	
-	
-	game.score = game.score+snakeSpeed*smp;
-	
-	document.getElementById("score").innerHTML="score : "+game.score;
-	document.getElementById("smp").innerHTML=smp+"X";
 
-	//update last eaten time
-	game.lastEaten=game.counter;
-} 
-else if(nextLocation == 2 || nextLocation ==1) //there is a wall or part of snake game over
-{
-this.snakeCells.unshift(head);
-game.over();
-}
+
 
 }
 
