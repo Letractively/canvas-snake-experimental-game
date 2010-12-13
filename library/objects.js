@@ -152,6 +152,12 @@ if(nextLocation == 0)
 	else if((head.cellType == HEAD_LEFT && this.dy == -1)||(head.cellType == HEAD_UP && this.dx == 1))
 	head.cellType = BODY_LEFT_DOWN;
 	
+	if((head.cellType == HEAD_RIGHT && this.dy == 0) || (head.cellType == HEAD_LEFT && this.dy == 0))
+	head.cellType = BODY_HORIZONTAL;
+	else if((head.cellType == HEAD_UP && this.dx == 0) || (head.cellType == HEAD_DOWN && this.dx == 0))
+	head.cellType = BODY_VERTICAL;
+	
+	
 	//third we should update the new tail
 	var newTail = this.snakeCells.pop(); //the old tail is the deleted object
 	var beforeNewTail = this.snakeCells.pop(); //the before of newTail
