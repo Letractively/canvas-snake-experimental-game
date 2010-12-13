@@ -44,7 +44,7 @@ var HEAD_DOWN = 3;
 var HEAD_RIGHT = 4;
 
 var BODY_HORIZONTAL = 5;
-var BODY_VERCITAL = 6;
+var BODY_VERTICAL = 6;
 var BODY_RIGHT_UP = 7; //the type of snake body making turn from right to up
 var BODY_RIGHT_DOWN = 8; 
 var BODY_LEFT_UP = 9;
