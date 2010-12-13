@@ -77,12 +77,21 @@ for(var i=0; i < initSnakeSize ; i++)
 var tmp=new Object();
 tmp.x=(this.headX-i);
 tmp.y=(this.headY);
+if(i == 0)
+tmp.cellType = HEAD_RIGHT; //snake cell types defined at global js
+else if( i < initSnakeSize-1 )
+tmp.cellType = BODY_HORIZONTAL;
+else
+tmp.cellType = TAIL_LEFT; // the last cell is tail left type cell
+
 this.snakeCells.push(tmp);
 map.base[tmp.x][tmp.y]=1; //update base
 }
 
 this.render= function()
 {
+	//TO DO: we should make this render function in a swithc or if else statements to render
+	// different body parts of snake differently
 	for(var i in this.snakeCells)
 	{
 	ctx.fillStyle="#00FF00";
@@ -95,6 +104,7 @@ this.render= function()
 
 //moves the snake using dx and dy and updates the snakeCells array,
 //first checks simple collision detection 
+//and also this function should update all snake cell types after each move
 this.move= function()
 {
 this.turnCommandGiven=false;
@@ -107,16 +117,54 @@ var nextLocation= map.base[nextX][nextY];
 //2 means that cell contains a wall, and -1 means cell has a food
 if(nextLocation == 0)
 {//empty cell move the snake and update the snakeCells
-	this.snakeCells.unshift(head);
+	this.snakeCells.unshift(head); //put old head back to snake
 	var tmp=new Object();
 	tmp.x=nextX;
 	tmp.y=nextY;
 	//update next cell that there is a part of snake now
 	map.base[tmp.x][tmp.y]=1;
-	this.snakeCells.unshift(tmp);
+	this.snakeCells.unshift(tmp); //add new head
 	var deleted=this.snakeCells.pop(); // remove one snake part from last
 	//update map that deleted cell contains no more part of snake
 	map.base[deleted.x][deleted.y]=0;
+	
+	
+	//now update snake cells to correct cell types
+	//first update new head type
+	var newHead=this.snakeCells.shift();
+	if(this.dx == 1 && this.dy == 0)
+	newHead.cellType = HEAD_RIGHT;
+	else if(this.dx == -1 && this.dy == 0)
+	newHead.cellType = HEAD_LEFT;
+	else if(this.dx == 0 && this.dy == 1)
+	newHead.cellType = HEAD_UP;
+	else if(this.dx == 0 && this.dy == -1)
+	newHead.cellType = HEAD_DOWN;
+	this.snakeCells.unshift(newHead); //put new head to its previous place at array
+	
+	//second update old head
+	if((head.cellType == HEAD_RIGHT && this.dy == 1)||(head.cellType == HEAD_DOWN && this.dx == -1))
+	head.cellType = BODY_RIGHT_UP;
+	else if((head.cellType == HEAD_RIGHT && this.dy == -1)||(head.cellType == HEAD_UP && this.dx == -1))
+	head.cellType = BODY_RIGHT_DOWN;
+	else if((head.cellType == HEAD_LEFT && this.dy == 1)||(head.cellType == HEAD_DOWN && this.dx == 1))
+	head.cellType = BODY_LEFT_UP;
+	else if((head.cellType == HEAD_LEFT && this.dy == -1)||(head.cellType == HEAD_UP && this.dx == 1))
+	head.cellType = BODY_LEFT_DOWN;
+	
+	//third we should update the new tail
+	var newTail = this.snakeCells.pop(); //the old tail is the deleted object
+	var beforeNewTail = this.snakeCells.pop(); //the before of newTail
+	
+	if(beforeNewTail.x > newTail.x && beforeNewTail.y == newTail.y)
+	newTail.cellType = TAIL_LEFT;
+	else if(beforeNewTail.x < newTail.x && beforeNewTail.y == newTail.y)
+	newTail.cellType = TAIL_RIGHT;
+	else if(beforeNewTail.y > newTail.y && beforeNewTail.x == newTail.x)
+	newTail.cellType = TAIL_DOWN;
+	else if(beforeNewTail.y < newTail.y && beforeNewTail.x == newTail.x)
+	newTail.cellType = TAIL_UP;
+	
 }
 else if(nextLocation == -1) //yummy food!!
 {

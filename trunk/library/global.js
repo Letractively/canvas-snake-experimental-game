@@ -1,3 +1,6 @@
+
+
+
 //global variables that rosnake game will use
 var map,snake,game;
 //map object properties
@@ -33,6 +36,25 @@ var rightDown = false;
 var leftDown = false;
 var upDown = false;
 var downDown = false;
+
+//snake cell type definitions
+var HEAD_UP = 1;
+var HEAD_LEFT = 2;
+var HEAD_DOWN = 3;
+var HEAD_RIGHT = 4;
+
+var BODY_HORIZONTAL = 5;
+var BODY_VERCITAL = 6;
+var BODY_RIGHT_UP = 7; //the type of snake body making turn from right to up
+var BODY_RIGHT_DOWN = 8; 
+var BODY_LEFT_UP = 9;
+var BODY_LEFT_DOWN = 10;
+
+var TAIL_UP = 11;
+var TAIL_DOWN = 12;
+var TAIL_RIGHT = 13;
+var TAIL_LEFT = 14;
+
 
 //set rightDown or leftDown if the right or left keys are down
 function onKeyDown(evt) {
