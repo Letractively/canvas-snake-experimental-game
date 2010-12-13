@@ -90,11 +90,76 @@ map.base[tmp.x][tmp.y]=1; //update base
 
 this.render= function()
 {
+
+var TAIL_UP = 11;
+var TAIL_DOWN = 12;
+var TAIL_RIGHT = 13;
+var TAIL_LEFT = 14;
 	//TO DO: we should make this render function in a swithc or if else statements to render
 	// different body parts of snake differently
 	for(var i in this.snakeCells)
 	{
-	ctx.fillStyle="#00FF00";
+	//test assign different colors for every cellType
+	switch(this.snakeCells[i].cellType)
+	{
+		case  HEAD_UP:
+		  ctx.fillStyle="black";
+		break;
+		
+		case  HEAD_LEFT:
+		  ctx.fillStyle="black";
+		break;
+		
+		case  HEAD_DOWN:
+		  ctx.fillStyle="black";
+		break;
+		
+		case  HEAD_RIGHT:
+		  ctx.fillStyle="black";
+		break;
+		
+		case  BODY_HORIZONTAL:
+		  ctx.fillStyle="green";
+		break;
+		
+		case  BODY_VERTICAL:
+		  ctx.fillStyle="red";
+		break;
+		
+		case  BODY_RIGHT_UP:
+		  ctx.fillStyle="black";
+		break;
+		
+		case  BODY_RIGHT_DOWN:
+		  ctx.fillStyle="black";
+		break;
+		
+		case  BODY_LEFT_UP:
+		  ctx.fillStyle="black";
+		break;
+		
+		case  BODY_LEFT_DOWN:
+		  ctx.fillStyle="black";
+		break;
+		
+		case  TAIL_UP:
+		  ctx.fillStyle="black";
+		break;
+		
+		case  TAIL_DOWN:
+		  ctx.fillStyle="black";
+		break;
+		
+		case  TAIL_RIGHT:
+		  ctx.fillStyle="black";
+		break;
+		
+		case  TAIL_LEFT:
+		  ctx.fillStyle="black";
+		break;
+	}
+
+	//
 	ctx.beginPath();
 	ctx.rect(this.snakeCells[i].x*squaresize,this.snakeCells[i].y*squaresize,squaresize,squaresize);
 	ctx.closePath();
