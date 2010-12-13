@@ -165,6 +165,9 @@ if(nextLocation == 0)
 	else if(beforeNewTail.y < newTail.y && beforeNewTail.x == newTail.x)
 	newTail.cellType = TAIL_UP;
 	
+	this.snakeCells.push(beforeNewTail);
+	this.snakeCells.push(newTail);
+	
 }
 else if(nextLocation == -1) //yummy food!!
 {
