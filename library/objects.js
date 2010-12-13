@@ -164,7 +164,6 @@ var TAIL_LEFT = 14;
 		case  BODY_RIGHT_UP:
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5); 
-				ctx.rotate(Math.PI)
 				ctx.fillStyle="rgb(0,128,0)";
 				ctx.beginPath();
 				ctx.moveTo(-6.5,7.5);
@@ -187,7 +186,7 @@ var TAIL_LEFT = 14;
 		case  BODY_RIGHT_DOWN:
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5); 
-				ctx.rotate(Math.PI*3/2)
+				ctx.rotate(Math.PI/2);
 				ctx.fillStyle="rgb(0,128,0)";
 				ctx.beginPath();
 				ctx.moveTo(-6.5,7.5);
@@ -210,7 +209,7 @@ var TAIL_LEFT = 14;
 		case  BODY_LEFT_UP:
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5); 
-				ctx.rotate(Math.PI/2)
+				ctx.rotate(Math.PI*3/2);
 				ctx.fillStyle="rgb(0,128,0)";
 				ctx.beginPath();
 				ctx.moveTo(-6.5,7.5);
@@ -233,7 +232,7 @@ var TAIL_LEFT = 14;
 		case  BODY_LEFT_DOWN:
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5); 
-				ctx.rotate(Math.PI*3/2)
+				ctx.rotate(Math.PI);
 				ctx.fillStyle="rgb(0,128,0)";
 				ctx.beginPath();
 				ctx.moveTo(-6.5,7.5);
