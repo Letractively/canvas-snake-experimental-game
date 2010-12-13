@@ -141,7 +141,7 @@ var TAIL_LEFT = 14;
 				ctx.beginPath();
 				ctx.moveTo(-4.5+i*5.0,-6.5);
 				ctx.lineTo(-4.5+i*5.0,6.5);
-				ctx.stroke();
+				ctx.stroke();}
 				ctx.restore();
 		break;
 		
@@ -157,7 +157,7 @@ var TAIL_LEFT = 14;
 				ctx.beginPath();
 				ctx.moveTo(-4.5+i*5.0,-6.5);
 				ctx.lineTo(-4.5+i*5.0,6.5);
-				ctx.stroke();
+				ctx.stroke();}
 				ctx.restore();
 		break;
 		
@@ -180,7 +180,7 @@ var TAIL_LEFT = 14;
 				ctx.beginPath(); 
 				ctx.moveTo(-7.5,7.5);
 				ctx.lineTo(7.0-i*5.0,4.5-i*9.0);
-				ctx.stroke();
+				ctx.stroke();}
 				ctx.restore();
 		break;
 		
@@ -203,7 +203,7 @@ var TAIL_LEFT = 14;
 				ctx.beginPath(); 
 				ctx.moveTo(-7.5,7.5);
 				ctx.lineTo(7.0-i*5.0,4.5-i*9.0);
-				ctx.stroke();
+				ctx.stroke();}
 				ctx.restore();
 		break;
 		
@@ -226,7 +226,7 @@ var TAIL_LEFT = 14;
 				ctx.beginPath(); 
 				ctx.moveTo(-7.5,7.5);
 				ctx.lineTo(7.0-i*5.0,4.5-i*9.0);
-				ctx.stroke();
+				ctx.stroke();}
 				ctx.restore();
 		break;
 		
@@ -249,7 +249,7 @@ var TAIL_LEFT = 14;
 				ctx.beginPath(); 
 				ctx.moveTo(-7.5,7.5);
 				ctx.lineTo(7.0-i*5.0,4.5-i*9.0);
-				ctx.stroke();
+				ctx.stroke();}
 				ctx.restore();
 		break;
 		
