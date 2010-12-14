@@ -132,10 +132,14 @@ var TAIL_LEFT = 14;
 		
 		case  BODY_HORIZONTAL:
 				ctx.save();
-				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5);  
-				ctx.fillStyle="rgb(0,128,0)";
+				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5);
+				var lingradh = ctx.createLinearGradient(0,-7.5,0,7.5);
+				lingradh.addColorStop(0, '#019F62');  
+				lingradh.addColorStop(0.5, '#A7D30C');  
+				lingradh.addColorStop(1, '#019F62');
+				ctx.fillStyle=lingradh;
 				ctx.fillRect(-7.5,-6.5,15.0,13.0); 
-				ctx.lineWidth = 1.0; 
+				ctx.lineWidth = 1.5; 
 				ctx.strokeStyle="rgb(255,165,0)";
 				for(var i=0;i<3;i++){
 				ctx.beginPath();
@@ -149,9 +153,13 @@ var TAIL_LEFT = 14;
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5);  
 				ctx.rotate(Math.PI/2);
-				ctx.fillStyle="rgb(0,128,0)";
+				var lingradv = ctx.createLinearGradient(0,-7.5,0,7.5);
+				lingradv.addColorStop(0, '#019F62');  
+				lingradv.addColorStop(0.5, '#A7D30C');  
+				lingradv.addColorStop(1, '#019F62');
+				ctx.fillStyle=lingradv;
 				ctx.fillRect(-7.5,-6.5,15.0,13.0); 
-				ctx.lineWidth = 1.0; 
+				ctx.lineWidth = 1.5; 
 				ctx.strokeStyle="rgb(255,165,0)";
 				for(var i=0;i<3;i++){
 				ctx.beginPath();
@@ -164,7 +172,11 @@ var TAIL_LEFT = 14;
 		case  BODY_RIGHT_UP:
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5); 
-				ctx.fillStyle="rgb(0,128,0)";
+				var radgrad = ctx.createRadialGradient(-7.5,7.5,1,7.5,7.5,14);  
+				radgrad.addColorStop(0, '#019F62');  
+				radgrad.addColorStop(0.5, '#A7D30C');  
+				radgrad.addColorStop(1, '#019F62');  
+				ctx.fillStyle = radgrad;
 				ctx.beginPath();
 				ctx.moveTo(-6.5,7.5);
 				ctx.arc(-7.5,7.5,1.0,0,Math.PI/2,true);
@@ -173,12 +185,12 @@ var TAIL_LEFT = 14;
 				ctx.lineTo(6.5,7.5);
 				ctx.clip();
 				ctx.fill();
-				ctx.lineWidth = 1.0; 
+				ctx.lineWidth = 1.5; 
 				ctx.strokeStyle="rgb(255,165,0)";
-				for(var i=0;i<3;i++){ 
+				for(var i=0;i<4;i++){ 
 				ctx.beginPath(); 
 				ctx.moveTo(-7.5,7.5);
-				ctx.lineTo(7.0-i*5.0,4.5-i*9.0);
+				ctx.lineTo(7.0-i*3.0,4.5-i*7.0);
 				ctx.stroke();}
 				ctx.restore();
 		break;
@@ -187,7 +199,11 @@ var TAIL_LEFT = 14;
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5); 
 				ctx.rotate(Math.PI/2);
-				ctx.fillStyle="rgb(0,128,0)";
+				var radgrad = ctx.createRadialGradient(-7.5,7.5,1,7.5,7.5,14);  
+				radgrad.addColorStop(0, '#019F62');  
+				radgrad.addColorStop(0.5, '#A7D30C');  
+				radgrad.addColorStop(1, '#019F62');  
+				ctx.fillStyle = radgrad;
 				ctx.beginPath();
 				ctx.moveTo(-6.5,7.5);
 				ctx.arc(-7.5,7.5,1.0,0,Math.PI/2,true);
@@ -196,12 +212,12 @@ var TAIL_LEFT = 14;
 				ctx.lineTo(6.5,7.5);
 				ctx.clip();
 				ctx.fill();
-				ctx.lineWidth = 1.0; 
+				ctx.lineWidth = 1.5; 
 				ctx.strokeStyle="rgb(255,165,0)";
-				for(var i=0;i<3;i++){ 
+				for(var i=0;i<4;i++){ 
 				ctx.beginPath(); 
 				ctx.moveTo(-7.5,7.5);
-				ctx.lineTo(7.0-i*5.0,4.5-i*9.0);
+				ctx.lineTo(7.0-i*3.0,4.5-i*7.0);
 				ctx.stroke();}
 				ctx.restore();
 		break;
@@ -210,7 +226,11 @@ var TAIL_LEFT = 14;
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5); 
 				ctx.rotate(Math.PI*3/2);
-				ctx.fillStyle="rgb(0,128,0)";
+				var radgrad = ctx.createRadialGradient(-7.5,7.5,1,7.5,7.5,14);  
+				radgrad.addColorStop(0, '#019F62');  
+				radgrad.addColorStop(0.5, '#A7D30C');  
+				radgrad.addColorStop(1, '#019F62');  
+				ctx.fillStyle = radgrad;
 				ctx.beginPath();
 				ctx.moveTo(-6.5,7.5);
 				ctx.arc(-7.5,7.5,1.0,0,Math.PI/2,true);
@@ -219,12 +239,12 @@ var TAIL_LEFT = 14;
 				ctx.lineTo(6.5,7.5);
 				ctx.clip();
 				ctx.fill();
-				ctx.lineWidth = 1.0; 
+				ctx.lineWidth = 1.5; 
 				ctx.strokeStyle="rgb(255,165,0)";
-				for(var i=0;i<3;i++){ 
+				for(var i=0;i<4;i++){ 
 				ctx.beginPath(); 
 				ctx.moveTo(-7.5,7.5);
-				ctx.lineTo(7.0-i*5.0,4.5-i*9.0);
+				ctx.lineTo(7.0-i*3.0,4.5-i*7.0);
 				ctx.stroke();}
 				ctx.restore();
 		break;
@@ -233,7 +253,11 @@ var TAIL_LEFT = 14;
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5); 
 				ctx.rotate(Math.PI);
-				ctx.fillStyle="rgb(0,128,0)";
+				var radgrad = ctx.createRadialGradient(-7.5,7.5,1,7.5,7.5,14);  
+				radgrad.addColorStop(0, '#019F62');  
+				radgrad.addColorStop(0.5, '#A7D30C');  
+				radgrad.addColorStop(1, '#019F62');  
+				ctx.fillStyle = radgrad;
 				ctx.beginPath();
 				ctx.moveTo(-6.5,7.5);
 				ctx.arc(-7.5,7.5,1.0,0,Math.PI/2,true);
@@ -242,12 +266,12 @@ var TAIL_LEFT = 14;
 				ctx.lineTo(6.5,7.5);
 				ctx.clip();
 				ctx.fill();
-				ctx.lineWidth = 1.0; 
+				ctx.lineWidth = 1.5; 
 				ctx.strokeStyle="rgb(255,165,0)";
-				for(var i=0;i<3;i++){ 
+				for(var i=0;i<4;i++){ 
 				ctx.beginPath(); 
 				ctx.moveTo(-7.5,7.5);
-				ctx.lineTo(7.0-i*5.0,4.5-i*9.0);
+				ctx.lineTo(7.0-i*3.0,4.5-i*7.0);
 				ctx.stroke();}
 				ctx.restore();
 		break;
