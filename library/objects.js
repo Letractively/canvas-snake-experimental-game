@@ -139,14 +139,8 @@ var TAIL_LEFT = 14;
 				lingradh.addColorStop(1, '#019F62');
 				ctx.fillStyle=lingradh;
 				ctx.fillRect(-7.5,-6.5,15.0,13.0); 
-				ctx.lineWidth = 1.5; 
-				ctx.strokeStyle="rgb(255,165,0)";
-				for(var i=0;i<3;i++){
-				ctx.beginPath();
-				ctx.moveTo(-4.5+i*5.0,-6.5);
-				ctx.lineTo(-4.5+i*5.0,6.5);
-				ctx.stroke();}
 				ctx.restore();
+
 		break;
 		
 		case  BODY_VERTICAL:
@@ -159,22 +153,15 @@ var TAIL_LEFT = 14;
 				lingradv.addColorStop(1, '#019F62');
 				ctx.fillStyle=lingradv;
 				ctx.fillRect(-7.5,-6.5,15.0,13.0); 
-				ctx.lineWidth = 1.5; 
-				ctx.strokeStyle="rgb(255,165,0)";
-				for(var i=0;i<3;i++){
-				ctx.beginPath();
-				ctx.moveTo(-4.5+i*5.0,-6.5);
-				ctx.lineTo(-4.5+i*5.0,6.5);
-				ctx.stroke();}
 				ctx.restore();
 		break;
 		
 		case  BODY_RIGHT_UP:
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5); 
-				var radgrad = ctx.createRadialGradient(-7.5,7.5,1,7.5,7.5,14);  
+				var radgrad = ctx.createRadialGradient(-7.5,7.5,1,-7.5,7.5,17);  
 				radgrad.addColorStop(0, '#019F62');  
-				radgrad.addColorStop(0.5, '#A7D30C');  
+				radgrad.addColorStop(0.3, '#A7D30C');  
 				radgrad.addColorStop(1, '#019F62');  
 				ctx.fillStyle = radgrad;
 				ctx.beginPath();
@@ -185,13 +172,6 @@ var TAIL_LEFT = 14;
 				ctx.lineTo(6.5,7.5);
 				ctx.clip();
 				ctx.fill();
-				ctx.lineWidth = 1.5; 
-				ctx.strokeStyle="rgb(255,165,0)";
-				for(var i=0;i<4;i++){ 
-				ctx.beginPath(); 
-				ctx.moveTo(-7.5,7.5);
-				ctx.lineTo(7.0-i*3.0,4.5-i*7.0);
-				ctx.stroke();}
 				ctx.restore();
 		break;
 		
@@ -199,9 +179,9 @@ var TAIL_LEFT = 14;
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5); 
 				ctx.rotate(Math.PI/2);
-				var radgrad = ctx.createRadialGradient(-7.5,7.5,1,7.5,7.5,14);  
+				var radgrad = ctx.createRadialGradient(-7.5,7.5,1,-7.5,7.5,17);  
 				radgrad.addColorStop(0, '#019F62');  
-				radgrad.addColorStop(0.5, '#A7D30C');  
+				radgrad.addColorStop(0.3, '#A7D30C');  
 				radgrad.addColorStop(1, '#019F62');  
 				ctx.fillStyle = radgrad;
 				ctx.beginPath();
@@ -212,23 +192,17 @@ var TAIL_LEFT = 14;
 				ctx.lineTo(6.5,7.5);
 				ctx.clip();
 				ctx.fill();
-				ctx.lineWidth = 1.5; 
-				ctx.strokeStyle="rgb(255,165,0)";
-				for(var i=0;i<4;i++){ 
-				ctx.beginPath(); 
-				ctx.moveTo(-7.5,7.5);
-				ctx.lineTo(7.0-i*3.0,4.5-i*7.0);
-				ctx.stroke();}
 				ctx.restore();
+
 		break;
 		
 		case  BODY_LEFT_UP:
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5); 
 				ctx.rotate(Math.PI*3/2);
-				var radgrad = ctx.createRadialGradient(-7.5,7.5,1,7.5,7.5,14);  
+				var radgrad = ctx.createRadialGradient(-7.5,7.5,1,-7.5,7.5,17);  
 				radgrad.addColorStop(0, '#019F62');  
-				radgrad.addColorStop(0.5, '#A7D30C');  
+				radgrad.addColorStop(0.3, '#A7D30C');  
 				radgrad.addColorStop(1, '#019F62');  
 				ctx.fillStyle = radgrad;
 				ctx.beginPath();
@@ -239,13 +213,6 @@ var TAIL_LEFT = 14;
 				ctx.lineTo(6.5,7.5);
 				ctx.clip();
 				ctx.fill();
-				ctx.lineWidth = 1.5; 
-				ctx.strokeStyle="rgb(255,165,0)";
-				for(var i=0;i<4;i++){ 
-				ctx.beginPath(); 
-				ctx.moveTo(-7.5,7.5);
-				ctx.lineTo(7.0-i*3.0,4.5-i*7.0);
-				ctx.stroke();}
 				ctx.restore();
 		break;
 		
@@ -253,9 +220,9 @@ var TAIL_LEFT = 14;
 				ctx.save();
 				ctx.translate(this.snakeCells[i].x*squaresize+7.5,this.snakeCells[i].y*squaresize+7.5); 
 				ctx.rotate(Math.PI);
-				var radgrad = ctx.createRadialGradient(-7.5,7.5,1,7.5,7.5,14);  
+				var radgrad = ctx.createRadialGradient(-7.5,7.5,1,-7.5,7.5,17);  
 				radgrad.addColorStop(0, '#019F62');  
-				radgrad.addColorStop(0.5, '#A7D30C');  
+				radgrad.addColorStop(0.3, '#A7D30C');  
 				radgrad.addColorStop(1, '#019F62');  
 				ctx.fillStyle = radgrad;
 				ctx.beginPath();
@@ -266,13 +233,6 @@ var TAIL_LEFT = 14;
 				ctx.lineTo(6.5,7.5);
 				ctx.clip();
 				ctx.fill();
-				ctx.lineWidth = 1.5; 
-				ctx.strokeStyle="rgb(255,165,0)";
-				for(var i=0;i<4;i++){ 
-				ctx.beginPath(); 
-				ctx.moveTo(-7.5,7.5);
-				ctx.lineTo(7.0-i*3.0,4.5-i*7.0);
-				ctx.stroke();}
 				ctx.restore();
 		break;
 		
@@ -518,12 +478,17 @@ this.randomFood=function()
 
 this.renderFood=function()
 {
-
-	ctx.fillStyle="#CC0000";
+	ctx.save();
+	var foodgrad = ctx.createRadialGradient(this.food.x*squaresize+5.5,this.food.y*squaresize+5.5,3,this.food.x*squaresize+7.5,this.food.y*squaresize+7.5,7.5);  
+	foodgrad.addColorStop(0, "orange");  
+	foodgrad.addColorStop(0.9, 'rgb(255,25,0)');  
+	foodgrad.addColorStop(1, 'rgba(255,25,0,0)');  
+	ctx.fillStyle=foodgrad;
 	ctx.beginPath();
 	ctx.rect(this.food.x*squaresize,this.food.y*squaresize,squaresize,squaresize);
 	ctx.closePath();
-	ctx.fill();	
+	ctx.fill();
+	ctx.restore();
 }
 
 this.draw = function()
