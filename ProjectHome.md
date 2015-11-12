@@ -1,0 +1,1 @@
+a simple snake game, implemented in HTML 5 Canvas
